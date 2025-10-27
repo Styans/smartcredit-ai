@@ -8,13 +8,13 @@
 # Игнорируем временную папку 'air'
 /tmp/
 # Игнорируем логи 'air'
-air_errors.log
+# air_errors.log
 
 # --- Go ---
 # Игнорируем локальные бинарники
-*.exe
-server
+# *.exe
+# server
 
 # --- OS ---
-.DS_Store
-Thumbs.db
+# .DS_Store
+# Thumbs.db
