@@ -29,7 +29,7 @@ COPY --from=builder /app/server .
 COPY --from=builder /go/bin/air /usr/local/bin/air
 
 # Копируем .env
-COPY .env .
+# COPY .env .
 
 EXPOSE 9090
 CMD ["./server"]

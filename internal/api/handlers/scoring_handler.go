@@ -20,13 +20,13 @@ type ScoringHandler struct {
 }
 
 func NewScoringHandler(
-	appRepo *repository.ApplicationRepository,
 	repo *repository.UserRepository,
+	appRepo *repository.ApplicationRepository,
 	ai *services.AIService,
 ) *ScoringHandler {
 	return &ScoringHandler{
-		AppRepo:   appRepo,
 		UserRepo:  repo,
+		AppRepo:   appRepo,
 		AIService: ai,
 	}
 }
@@ -73,7 +73,7 @@ func (h *ScoringHandler) Ask(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get AI analysis", "details": err.Error()})
 		return
 	}
-
+	
 	internalReasonsBytes, _ := json.Marshal(scoreResult.Recommendations)
 	internalReasonsStr := string(internalReasonsBytes)
 
